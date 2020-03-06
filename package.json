@@ -2,7 +2,7 @@
   "name": "nytscraper",
   "version": "1.0.0",
   "description": "Tracks all COVID-19 cases from NYT",
-  "main": "index.js",
+  "main": "corona",
   "dependencies": {
     "puppeteer": "^2.1.1"
   },
