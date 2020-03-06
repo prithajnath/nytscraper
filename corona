@@ -36,8 +36,8 @@ async function grabData(page, url){
 
 
 (async () => {
-	const browser = await puppeteer.launch({headless: process.env.HEADLESS});
-	const page = await browser.newPage();
+  const browser = await puppeteer.launch({headless: process.env.HEADLESS});
+  const page = await browser.newPage();
   const url = 'https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html';
   const cases = await grabData(page, url);
   Object.keys(cases).forEach(state => {
