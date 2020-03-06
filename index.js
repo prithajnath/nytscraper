@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const puppeteer = require('puppeteer');
 async function grabData(page, url){
   await page.goto(url, {waitUntil: 'networkidle2'});
@@ -38,6 +40,8 @@ async function grabData(page, url){
 	const page = await browser.newPage();
   const url = 'https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html';
   const cases = await grabData(page, url);
-  console.log(cases);
+  Object.keys(cases).forEach(state => {
+    console.log(`${state} => Confirmed: ${cases[state]['confirmed']}  Dead: ${cases[state]['deaths']}`);
+  });
   await browser.close();
 })();
