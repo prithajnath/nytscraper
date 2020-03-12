@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+import sys
+import json
+
+data = json.loads(sys.stdin.read())
+total_infected = sum([int(i['confirmed']) for i in data.values()])
+NY = data['New York']['confirmed']
+
+
+print(f"Total US cases : {total_infected}")
+print(f"Total in New York: {NY}")

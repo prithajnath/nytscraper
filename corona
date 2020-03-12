@@ -40,8 +40,6 @@ async function grabData(page, url){
   const page = await browser.newPage();
   const url = 'https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html';
   const cases = await grabData(page, url);
-  Object.keys(cases).forEach(state => {
-    console.log(`${state} => Confirmed: ${cases[state]['confirmed']}  Dead: ${cases[state]['deaths']}`);
-  });
+  console.log(JSON.stringify(cases));
   await browser.close();
 })();

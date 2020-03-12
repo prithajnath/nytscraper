@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+
+import math
+import sys
+from datetime import datetime
+
+BASE = 3
+
+cases_til_date = int(sys.stdin.read())
+first_us_case_date = datetime.strptime("01-19-20", "%m-%d-%y")
+today = datetime.now()
+
+# Using 2 as base
+num_of_doubled = math.log(cases_til_date, BASE)
+
+doubling_rate = num_of_doubled/(today - first_us_case_date).days
+
+projected_date = datetime.strptime("05-09-20", "%m-%d-%y")
+
+projected_cases = BASE**(doubling_rate*(projected_date - first_us_case_date).days)
+
+print(f"{projected_cases:,}")
