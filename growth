@@ -10,10 +10,10 @@ cases_til_date = int(sys.stdin.read())
 first_us_case_date = datetime.strptime("01-19-20", "%m-%d-%y")
 today = datetime.now()
 
-# Using 2 as base
-num_of_doubled = math.log(cases_til_date, BASE)
+# Exponent
+exp = math.log(cases_til_date, BASE)
 
-doubling_rate = num_of_doubled/(today - first_us_case_date).days
+doubling_rate = exp/(today - first_us_case_date).days
 
 projected_date = datetime.strptime("05-09-20", "%m-%d-%y")
 
