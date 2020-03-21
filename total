@@ -3,7 +3,7 @@ import sys
 import json
 
 data = json.loads(sys.stdin.read())
-total_infected = sum([int(i['confirmed']) for i in data.values()])
+total_infected = sum([int(i['confirmed'].replace(",","")) for i in data.values()])
 NY = data['New York']['confirmed']
 
 
