@@ -23,7 +23,17 @@ Calculate estimated # of cases by May 9th
   cat Fri_Mar_20_22:32:31_EDT_2020.json | jq '.[].confirmed' | sed 's/,//g;s/"//g' | paste -s -d+ | bc | ./growth
 ```
 
-See totals for all US and NY
+Make a file called `states.txt` and add the states you're interested in
+
+```
+New York
+Vermont
+New Jersey
+California
+
+```
+
+See totals for all US and those states
 
 ```sh
 cat Fri_Mar_20_22:32:31_EDT_2020.json | ./total

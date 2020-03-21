@@ -4,8 +4,11 @@ import json
 
 data = json.loads(sys.stdin.read())
 total_infected = sum([int(i['confirmed'].replace(",","")) for i in data.values()])
-NY = data['New York']['confirmed']
 
+with open('states.txt', 'r') as f:
+    states = [state.strip() for state in f.readlines()]
 
-print(f"Total US cases : {total_infected}")
-print(f"Total in New York: {NY}")
+print(f"Total US cases : {total_infected:,}")
+
+for state in states:
+    print(f"Total in {state}: {data[state]['confirmed']}")
