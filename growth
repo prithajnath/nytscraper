@@ -4,7 +4,7 @@ import math
 import sys
 from datetime import datetime
 
-BASE = 3
+BASE = 2
 
 cases_til_date = int(sys.stdin.read())
 first_us_case_date = datetime.strptime("01-19-20", "%m-%d-%y")
