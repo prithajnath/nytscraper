@@ -14,6 +14,7 @@ today = datetime.now()
 exp = math.log(cases_til_date, BASE)
 
 doubling_rate = exp/(today - first_us_case_date).days
+print(f"Doubling every {round(1/doubling_rate)} days")
 
 projected_date = datetime.strptime("05-09-20", "%m-%d-%y")
 
